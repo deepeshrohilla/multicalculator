@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Multi Calculator</title>
+    <!-- css files or links -->
+    <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- navbar section -->
+        <nav class="navbar">
+            <button class="btn" id="simpleCalculator">Simple Calculator</button>
+            <button class="btn" id="gradeCalculator">Grade Calculator</button>
+            <button class="btn" id="lengthCalculator">Length Calculator</button>
+            <button class="btn" id="currencyCalculator">Currency Calculator</button>
+        </nav>
+        <!-- main program section -->
+        <section class="main">
+            <!-- animation section -->
+            <div class="animation">
+                <span>
+                    <span>
+                        <span></span>
+                    </span>
+                </span>
+            </div>
+            <!-- simple calculator section -->
+            <div class="simpleCalculator" id="simCalBox">
+                <form name="calc">
+                    <div class="inputBar">
+                        <input type="text" name="txt" placeholder="0" readonly />
+                    </div>
+                    <div class="calculatorNum">
+                        <span class="clearBtn" onclick="document.calc.txt.value = ''">CLEAR</span>
+                        <span class="btn" onclick="document.calc.txt.value +='+'">+</span>
+                        <span class="btn" onclick="document.calc.txt.value +='-'">-</span>
+                    </div>
+                    <div class="calculatorNum">
+                        <span class="btn" onclick="document.calc.txt.value +='7'">7</span>
+                        <span class="btn" onclick="document.calc.txt.value +='8'">8</span>
+                        <span class="btn" onclick="document.calc.txt.value +='9'">9</span>
+                        <span class="btn" onclick="document.calc.txt.value +='*'">*</span>
+                    </div>
+                    <div class="calculatorNum">
+                        <span class="btn" onclick="document.calc.txt.value +='4'">4</span>
+                        <span class="btn" onclick="document.calc.txt.value +='5'">5</span>
+                        <span class="btn" onclick="document.calc.txt.value +='6'">6</span>
+                        <span class="btn" onclick="document.calc.txt.value +='/'">/</span>
+                    </div>
+                    <div class="calculatorNum">
+                        <span class="btn" onclick="document.calc.txt.value +='1'">1</span>
+                        <span class="btn" onclick="document.calc.txt.value +='2'">2</span>
+                        <span class="btn" onclick="document.calc.txt.value +='3'">3</span>
+                        <span class="btn" onclick="document.calc.txt.value +='%'">%</span>
+                    </div>
+                    <div class="calculatorNum">
+                        <span class="btn" onclick="document.calc.txt.value +='0'">0</span>
+                        <span class="btn" onclick="document.calc.txt.value +='.'">.</span>
+                        <span class="resultBtn" onclick="document.calc.txt.value = eval(calc.txt.value)">=</span>
+                    </div>
+                </form>
+            </div>
+            <!-- grade calculator section -->
+            <div class="gradeCalculator" id="gradCalBox">
+                <div class="subjects">
+                    <span class="subBtn" id="primaryClass">1<sup>st</sup> to 10<sup>th</sup> Class</span>
+                    <span class="subBtn" id="secondaryClass">11<sup>th</sup> & 12<sup>th</sup> Class</span>
+                </div>
+                <form id="primaryClassBox">
+                    <!-- enter subject's marks -->
+                    <label for="hindiMarks">Hindi Marks</label>
+                    <input type="number" id="hindiMarks" min="0" max="100">
+                    <label for="englishMarks">English Marks</label>
+                    <input type="number" id="englishMarks" min="0" max="100">
+                    <label for="mathsMarks">Maths Marks</label>
+                    <input type="number" id="mathsMarks" min="0" max="100">
+                    <label for="scienceMarks">Science Marks</label>
+                    <input type="number" id="scienceMarks" min="0" max="100">
+                    <label for="socialScienceMarks">Social Science Marks</label>
+                    <input type="number" id="socialScienceMarks" min="0" max="100">
+                    <label for="thirdLangMarks">Third Lang Marks</label>
+                    <input type="number" id="thirdLangMarks" min="0" max="100">
+                    <!-- calculate button -->
+                    <span class="btn" type="submit" onclick="primaryResult()">Calculate Marks</span>
+                    <!-- result -->
+                    <span class="resultText">Your Result</span>
+                    <label for="totalMarks">Total Marks</label>
+                    <input type="text" id="totalMarks" readonly>
+                    <label for="percent">Percentage %</label>
+                    <input type="text" id="percent" readonly>
+                    <label for="grade">Grade</label>
+                    <input type="text" id="grade" readonly>
+                </form>
+                <form id="secondaryClassBox">
+                    <!-- enter subject's marks -->
+                    <label for="hindiMarks">Hindi Marks</label>
+                    <input type="number" id="secHindiMarks">
+                    <label for="englishMarks">English Marks</label>
+                    <input type="number" id="secEnglishMarks">
+                    <label for="mathsMarks">Maths/Biology/Account/History Marks</label>
+                    <input type="number" id="secMathsMarks">
+                    <label for="physicsMarks">Physics/Business/Geography Marks</label>
+                    <input type="number" id="secPhysicsMarks">
+                    <label for="chemistryMarks">Chemistry/Eco/Political Marks</label>
+                    <input type="number" id="secChemistryMarks">
+                    <!-- calculate button -->
+                    <span class="btn" onclick="secondaryResult()">Calculate Marks</span>
+                    <!-- result -->
+                    <span class="resultText">Your Result</span>
+                    <label for="totalMarks">Total Marks</label>
+                    <input type="text" id="secTotalMarks" readonly>
+                    <label for="percent">Percentage %</label>
+                    <input type="text" id="secPercent" readonly>
+                    <label for="grade">Grade</label>
+                    <input type="text" id="secGrade" readonly>
+                </form>
+            </div>
+            <!-- height calculator section -->
+            <div class="heightCalculator" id="heiCalBox">
+                <div class="hbox">
+                    <div class="subHbox">
+                        <select id="selectedValue">
+                            <option value="0">Select 1st Degit Type</option>
+                            <option value="Feet">Feet (ft)</option>
+                            <option value="Inch">Inch (in)</option>
+                            <option value="Centimeter">Centimeter (cm)</option>
+                            <option value="Meter">Meter (m)</option>
+                        </select>
+                        <input type="number" id="inputValue" placeholder="Enter a digit"/>
+                    </div>
+                    <button onclick="changeLength()">Change</button>
+                    <!-- svg icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" id="Capa_1" style="fill: #eaf0f152; width: 40px; height: 40px;"
+                        viewBox="0 0 490.688 490.688" x="0px" y="0px" xmlns:xml="http://www.w3.org/XML/1998/namespace" xml:space="preserve"
+                        version="1.1">
+                        <g>
+                            <path style="fill: #eaf0f152;"
+                                d="M 472.328 216.529 L 245.213 443.665 L 18.098 216.529 c -4.237 -4.093 -10.99 -3.975 -15.083 0.262 c -3.992 4.134 -3.992 10.687 0 14.82 l 234.667 234.667 c 4.165 4.164 10.917 4.164 15.083 0 l 234.667 -234.667 c 4.093 -4.237 3.975 -10.99 -0.262 -15.083 c -4.134 -3.993 -10.687 -3.993 -14.821 0 L 472.328 216.529 Z" />
+                            <path style="fill: #eaf0f152;"
+                                d="M 472.328 24.529 L 245.213 251.665 L 18.098 24.529 c -4.237 -4.093 -10.99 -3.975 -15.083 0.262 c -3.992 4.134 -3.992 10.687 0 14.821 l 234.667 234.667 c 4.165 4.164 10.917 4.164 15.083 0 L 487.432 39.612 c 4.237 -4.093 4.354 -10.845 0.262 -15.083 c -4.093 -4.237 -10.845 -4.354 -15.083 -0.262 c -0.089 0.086 -0.176 0.173 -0.262 0.262 L 472.328 24.529 Z" />
+                        </g>
+                        <path
+                            d="M 245.213 469.415 c -2.831 0.005 -5.548 -1.115 -7.552 -3.115 L 2.994 231.633 c -4.093 -4.237 -3.975 -10.99 0.262 -15.083 c 4.134 -3.992 10.687 -3.992 14.82 0 l 227.136 227.115 l 227.115 -227.136 c 4.237 -4.093 10.99 -3.975 15.083 0.262 c 3.993 4.134 3.993 10.687 0 14.821 L 252.744 466.279 C 250.748 468.28 248.04 469.408 245.213 469.415 Z" />
+                        <path
+                            d="M 245.213 277.415 c -2.831 0.005 -5.548 -1.115 -7.552 -3.115 L 2.994 39.633 c -4.093 -4.237 -3.975 -10.99 0.262 -15.083 c 4.134 -3.992 10.687 -3.992 14.821 0 l 227.136 227.115 L 472.328 24.529 c 4.093 -4.237 10.845 -4.354 15.083 -0.262 s 4.354 10.845 0.262 15.083 c -0.086 0.089 -0.173 0.176 -0.262 0.262 L 252.744 274.279 C 250.748 276.28 248.04 277.408 245.213 277.415 Z" />
+                    </svg>
+                    <div class="subHbox">
+                        <select id="changedValue">
+                            <option value="0">Select 2nd Degit Type</option>
+                            <option id="feet" value="Feet">Feet (ft)</option>
+                            <option value="Inch">Inch (in)</option>
+                            <option value="Centimeter">Centimeter (cm)</option>
+                            <option value="Meter">Meter (m)</option>
+                        </select>
+                        <input type="text" id="resultValue" placeholder="Your Result" readonly/>
+                    </div>
+                </div>
+            </div>
+            <!-- currency calculator section -->
+            <div class="currencyCalculator" id="curnCalBox">
+                <div class="cBox">
+                    <div class="subCbox">
+                        <select id="currSelectedValue">
+                            <option value="0">Select 1st Currency</option>
+                            <option value="INR">Indian Rupee (INR)</option>
+                            <option value="USD">US Doller (USD)</option>
+                            <option value="RUB">Russian Ruble (RUB)</option>
+                            <option value="XBT">Bitcoin (XBT)</option>
+                        </select>
+                        <input type="number" id="currInputValue" placeholder="Enter a digit"/>
+                    </div>
+                    <button onclick="changeCurrency()">Change</button>
+                    <!-- svg icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" id="Capa_1" style="fill: #eaf0f152; width: 40px; height: 40px;"
+                        viewBox="0 0 490.688 490.688" x="0px" y="0px" xmlns:xml="http://www.w3.org/XML/1998/namespace" xml:space="preserve"
+                        version="1.1">
+                        <g>
+                            <path style="fill: #eaf0f152;"
+                                d="M 472.328 216.529 L 245.213 443.665 L 18.098 216.529 c -4.237 -4.093 -10.99 -3.975 -15.083 0.262 c -3.992 4.134 -3.992 10.687 0 14.82 l 234.667 234.667 c 4.165 4.164 10.917 4.164 15.083 0 l 234.667 -234.667 c 4.093 -4.237 3.975 -10.99 -0.262 -15.083 c -4.134 -3.993 -10.687 -3.993 -14.821 0 L 472.328 216.529 Z" />
+                            <path style="fill: #eaf0f152;"
+                                d="M 472.328 24.529 L 245.213 251.665 L 18.098 24.529 c -4.237 -4.093 -10.99 -3.975 -15.083 0.262 c -3.992 4.134 -3.992 10.687 0 14.821 l 234.667 234.667 c 4.165 4.164 10.917 4.164 15.083 0 L 487.432 39.612 c 4.237 -4.093 4.354 -10.845 0.262 -15.083 c -4.093 -4.237 -10.845 -4.354 -15.083 -0.262 c -0.089 0.086 -0.176 0.173 -0.262 0.262 L 472.328 24.529 Z" />
+                        </g>
+                        <path
+                            d="M 245.213 469.415 c -2.831 0.005 -5.548 -1.115 -7.552 -3.115 L 2.994 231.633 c -4.093 -4.237 -3.975 -10.99 0.262 -15.083 c 4.134 -3.992 10.687 -3.992 14.82 0 l 227.136 227.115 l 227.115 -227.136 c 4.237 -4.093 10.99 -3.975 15.083 0.262 c 3.993 4.134 3.993 10.687 0 14.821 L 252.744 466.279 C 250.748 468.28 248.04 469.408 245.213 469.415 Z" />
+                        <path
+                            d="M 245.213 277.415 c -2.831 0.005 -5.548 -1.115 -7.552 -3.115 L 2.994 39.633 c -4.093 -4.237 -3.975 -10.99 0.262 -15.083 c 4.134 -3.992 10.687 -3.992 14.821 0 l 227.136 227.115 L 472.328 24.529 c 4.093 -4.237 10.845 -4.354 15.083 -0.262 s 4.354 10.845 0.262 15.083 c -0.086 0.089 -0.173 0.176 -0.262 0.262 L 252.744 274.279 C 250.748 276.28 248.04 277.408 245.213 277.415 Z" />
+                    </svg>
+                    <div class="subCbox">
+                        <select id="currChangedValue">
+                            <option value="0">Select 2nd Currency</option>
+                            <option value="INR">Indian Rupee (INR)</option>
+                            <option value="USD">US Doller (USD)</option>
+                            <option value="RUB">Russian Ruble (RUB)</option>
+                            <option value="XBT">Bitcoin (XBT)</option>
+                        </select>
+                        <input type="text" id="currResultValue" placeholder="Your Result" readonly/>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- javascript files or links -->
+    <!-- jquery first -->
+    <script src="assets/js/jquery-3.4.1.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

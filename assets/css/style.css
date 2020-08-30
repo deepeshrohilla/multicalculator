@@ -1,0 +1,412 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    min-height: 100vh;
+    background: #EAF0F1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.container{
+    width: 100%;
+    height: auto;
+    padding: 50px 100px;
+}
+@media screen and (max-width: 500px){
+    .container{
+        padding: 15px;
+    }
+}
+@media (min-width: 501px) and (max-width: 720px){
+    .container{
+        padding: 50px;
+    }
+}
+/* 
+    navbar and buttons start
+*/
+.navbar{
+    width: 100%;
+    border-radius: 15px;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 30px 0;
+    padding: 10px;
+    box-shadow: inset 0 0 10px #192a564b;
+}
+@media screen and (max-width: 650px){
+    .navbar{
+        flex-direction: column;
+    }
+}
+.navbar .btn{
+    border: none;
+    outline: none;
+    padding: 15px;
+    margin: 5px;
+    border-radius: 5px;
+    text-align: center;
+    color: #EAF0F1;
+    font-size: 1em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    background: #192a56;
+    transition: all 0.25s ease-in-out;
+    cursor: pointer;
+}
+.navbar .btn:hover{
+    background: #33b5e5;
+}
+/* 
+    navbar and buttons end
+*/
+
+/*
+    main program section start
+*/
+.main{
+    width: 100%;
+    min-height: 500px;
+    display: flex;
+    background: #192A56;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #0000008f;
+    overflow: hidden;
+    align-items: center;
+    padding: 30px;
+}
+@media screen and (max-width: 920px){
+    .main{
+        flex-direction: column;
+    }
+}
+.main > div{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+}
+@media screen and (max-width: 920px){
+    .main > div{
+        width: 100%;
+    }
+}
+
+/* 
+    animation section start
+*/
+.main .animation span{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: block;
+    border-top: 5px solid #33b5e5;
+    border-left: 0px solid #192A56;
+    border-right: 0px solid #192A56;
+    border-bottom: 0px solid #192A56;
+    animation: animate 2s infinite linear;
+}
+@keyframes animate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.main .animation > span > span{
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    display: block;
+    border-top: 5px solid #ff7070;
+    border-left: 0px solid #192A56;
+    border-right: 0px solid #192A56;
+    border-bottom: 0px solid #192A56;
+    animation: animate1 2s infinite linear;
+    animation-delay: 0.5s;
+}
+@keyframes animate1{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.main .animation > span > span > span{
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    display: block;
+    border-top: 5px solid #EAF0F1;
+    border-left: 0px solid #192A56;
+    border-right: 0px solid #192A56;
+    border-bottom: 0px solid #192A56;
+    animation: animate2 2s infinite linear;
+    animation-delay: 1s;
+}
+@keyframes animate2{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+/* 
+    Animation section end
+*/
+
+/* 
+    Calculator section start
+*/
+.main .simpleCalculator .inputBar{
+    width: 240px;
+    background: #eaf0f152;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 5px;
+}
+.main .simpleCalculator .inputBar input{
+    width: 100%;
+    text-align: right;
+    padding: 20px 15px;
+    font-size: 1.5em;
+    outline: none;
+    border: none;
+    background: none;
+    color: #EAF0F1;
+}
+.main .simpleCalculator .inputBar input::placeholder{
+    color: #EAF0F1;
+    opacity: 0.9;
+}
+.main .simpleCalculator .calculatorNum{
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+.main .simpleCalculator .calculatorNum span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+.main .simpleCalculator .calculatorNum .clearBtn{
+    width: 115px;
+    height: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #ff7070;
+    color: #EAF0F1;
+    font-size: 1.5em;
+    border-radius: 5px;
+    transition: 0.25s;
+}
+.main .simpleCalculator .calculatorNum .clearBtn:hover{
+    background: #EAF0F1;
+    color: #ff7070;
+}
+.main .simpleCalculator .calculatorNum .btn{
+    width: 50px;
+    height: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #eaf0f1;
+    color: #192A56;
+    font-size: 1.5em;
+    border-radius: 5px;
+    transition: 0.25s;
+}
+.main .simpleCalculator .calculatorNum .btn:active{
+    background: #33b5e5;
+    color: #EAF0F1;
+}
+.main .simpleCalculator .calculatorNum .resultBtn{
+    width: 115px;
+    height: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #33b5e5;
+    color: #EAF0F1;
+    font-size: 1.5em;
+    border-radius: 5px;
+    transition: 0.25s;
+}
+.main .simpleCalculator .calculatorNum .resultBtn:hover{
+    color: #33b5e5;
+    background: #EAF0F1;
+}
+/* 
+    Calculator section end
+*/
+
+/* 
+    Grade calculator section start
+*/
+.main .gradeCalculator{
+    padding: 0 75px;
+}
+@media screen and (max-width: 920px){
+    .main .gradeCalculator{
+        padding: 0px;
+    }
+}
+.main .gradeCalculator .subjects{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.main .gradeCalculator .subjects .subBtn{
+    display: block;
+    border: none;
+    outline: none;
+    padding: 15px;
+    font-size: 1em;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 5px;
+    margin: 15px 0;
+    color: #192A56;
+    background: #eaf0f1;
+    cursor: pointer;
+}
+.main .gradeCalculator .subjects .subBtn:active{
+    background: #33b5e5;
+    color: #EAF0F1;
+}
+.main .gradeCalculator form{
+    width: 100%;
+}
+.main .gradeCalculator form label{
+    display: block;
+    width: 100%;
+    font-size: 1em;
+    font-weight: 600;
+    color: #EAF0F1;
+}
+.main .gradeCalculator form input{
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 15px;
+    font-size: 1em;
+    font-weight: 600;
+    border-radius: 5px;
+    margin: 5px 0 10px 0;
+    color: #EAF0F1;
+    background: #eaf0f152;
+}
+.main .gradeCalculator form .btn{
+    display: block;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 15px;
+    font-size: 1em;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 5px;
+    margin: 15px 0;
+    color: #192A56;
+    background: #eaf0f1;
+    cursor: pointer;
+}
+.main .gradeCalculator form .btn:active{
+    background: #33b5e5;
+    color: #EAF0F1;
+}
+.main .gradeCalculator form .resultText{
+    display: block;
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #EAF0F1;
+    text-align: center;
+    margin: 15px 0;
+}
+/* 
+    Grade calculator section end
+*/
+
+/* 
+    Length & Currency calculator section start
+*/
+.heightCalculator, .currencyCalculator{
+    padding: 0 75px !important;
+}
+.heightCalculator .hbox, .currencyCalculator .cBox{
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.heightCalculator .hbox .subHbox , .currencyCalculator .cBox .subCbox{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.heightCalculator .hbox button, .currencyCalculator .cBox button{
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 15px;
+    font-size: 1em;
+    font-weight: 600;
+    border-radius: 5px;
+    margin: 10px 0;
+    color: #192a56;
+    background: #eaf0f1;
+    cursor: pointer;
+}
+.heightCalculator .hbox .subHbox select, .currencyCalculator .cBox .subCbox select{
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 15px;
+    font-size: 1em;
+    font-weight: 600;
+    border-radius: 5px;
+    margin: 10px 0;
+    color: #eaf0f1;
+    background: #eaf0f152;
+}
+.heightCalculator .hbox .subHbox select option, .currencyCalculator .cBox .subCbox select option{
+    padding: 15px;
+    font-size: 1em;
+    font-weight: 600;
+    color: #eaf0f1;
+    background: #192a56;
+}
+.heightCalculator .hbox .subHbox input, .currencyCalculator .cBox .subCbox input{
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 15px;
+    font-size: 1em;
+    font-weight: 600;
+    border-radius: 5px;
+    margin: 10px 0;
+    color: #eaf0f1;
+    background: #eaf0f152;
+}
+/* 
+    Length & Currency calculator section end
+*/
+/*
+    main program section end
+*/
