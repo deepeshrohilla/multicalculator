@@ -344,10 +344,18 @@ body{
 /* 
     Length & Currency calculator section start
 */
-.heightCalculator, .currencyCalculator{
+.heightCalculator, 
+.currencyCalculator{
     padding: 0 75px !important;
 }
-.heightCalculator .hbox, .currencyCalculator .cBox{
+@media screen and (max-width: 920px){
+    .heightCalculator,
+    .currencyCalculator{
+        padding: 0px !important;
+    }
+}
+.heightCalculator .hbox, 
+.currencyCalculator .cBox{
     width: 100%;
     padding: 15px;
     display: flex;
@@ -355,12 +363,20 @@ body{
     align-items: center;
     flex-direction: column;
 }
-.heightCalculator .hbox .subHbox , .currencyCalculator .cBox .subCbox{
+@media screen and (max-width: 920px){
+    .heightCalculator .hbox, 
+    .currencyCalculator .cBox{
+        padding: 0px;
+    }
+}
+.heightCalculator .hbox .subHbox, 
+.currencyCalculator .cBox .subCbox{
     width: 100%;
     display: flex;
     flex-direction: column;
 }
-.heightCalculator .hbox button, .currencyCalculator .cBox button{
+.heightCalculator .hbox button, 
+.currencyCalculator .cBox button{
     width: 100%;
     border: none;
     outline: none;
@@ -373,7 +389,8 @@ body{
     background: #eaf0f1;
     cursor: pointer;
 }
-.heightCalculator .hbox .subHbox select, .currencyCalculator .cBox .subCbox select{
+.heightCalculator .hbox .subHbox select, 
+.currencyCalculator .cBox .subCbox select{
     width: 100%;
     border: none;
     outline: none;
@@ -385,14 +402,16 @@ body{
     color: #eaf0f1;
     background: #eaf0f152;
 }
-.heightCalculator .hbox .subHbox select option, .currencyCalculator .cBox .subCbox select option{
+.heightCalculator .hbox .subHbox select option, 
+.currencyCalculator .cBox .subCbox select option{
     padding: 15px;
     font-size: 1em;
     font-weight: 600;
     color: #eaf0f1;
     background: #192a56;
 }
-.heightCalculator .hbox .subHbox input, .currencyCalculator .cBox .subCbox input{
+.heightCalculator .hbox .subHbox input, 
+.currencyCalculator .cBox .subCbox input{
     width: 100%;
     border: none;
     outline: none;
