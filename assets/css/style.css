@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,500;1,500&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: 'Raleway', sans-serif;
 }
 body{
     min-height: 100vh;
@@ -103,64 +104,12 @@ body{
 /* 
     animation section start
 */
-.main .animation span{
-    width: 200px;
-    height: 200px;
+.main .animation div{
+    width: 250px;
+    height: 250px;
+    background: url(../images/logo.png);
+    background-size: 100% 100%;
     border-radius: 50%;
-    display: block;
-    border-top: 5px solid #33b5e5;
-    border-left: 0px solid #192A56;
-    border-right: 0px solid #192A56;
-    border-bottom: 0px solid #192A56;
-    animation: animate 2s infinite linear;
-}
-@keyframes animate{
-    0%{
-        transform: rotate(0deg);
-    }
-    100%{
-        transform: rotate(360deg);
-    }
-}
-.main .animation > span > span{
-    width: 190px;
-    height: 190px;
-    border-radius: 50%;
-    display: block;
-    border-top: 5px solid #ff7070;
-    border-left: 0px solid #192A56;
-    border-right: 0px solid #192A56;
-    border-bottom: 0px solid #192A56;
-    animation: animate1 2s infinite linear;
-    animation-delay: 0.5s;
-}
-@keyframes animate1{
-    0%{
-        transform: rotate(0deg);
-    }
-    100%{
-        transform: rotate(360deg);
-    }
-}
-.main .animation > span > span > span{
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    display: block;
-    border-top: 5px solid #EAF0F1;
-    border-left: 0px solid #192A56;
-    border-right: 0px solid #192A56;
-    border-bottom: 0px solid #192A56;
-    animation: animate2 2s infinite linear;
-    animation-delay: 1s;
-}
-@keyframes animate2{
-    0%{
-        transform: rotate(0deg);
-    }
-    100%{
-        transform: rotate(360deg);
-    }
 }
 /* 
     Animation section end
@@ -214,7 +163,7 @@ body{
     border-radius: 5px;
     transition: 0.25s;
 }
-.main .simpleCalculator .calculatorNum .clearBtn:hover{
+.main .simpleCalculator .calculatorNum .clearBtn:active{
     background: #EAF0F1;
     color: #ff7070;
 }
@@ -246,7 +195,7 @@ body{
     border-radius: 5px;
     transition: 0.25s;
 }
-.main .simpleCalculator .calculatorNum .resultBtn:hover{
+.main .simpleCalculator .calculatorNum .resultBtn:active{
     color: #33b5e5;
     background: #EAF0F1;
 }
